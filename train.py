@@ -15,7 +15,7 @@ import random
 class DataSet(object):
     def __init__(self):
         with open('cfg.yml') as file:
-            self.cfg = yaml.load(file)
+            self.cfg = yaml.load(file, Loader=yaml.FullLoader)
         self.pointer = 0
         self.imgs = None
         self.labels = None
@@ -95,7 +95,7 @@ def sess_config(args=None):
 
 if __name__ == "__main__":
     with open('cfg.yml') as file:
-        cfg = yaml.load(file)
+        cfg = yaml.load(file, Loader=yaml.FullLoader)
     args = arg_parser()
     config = sess_config(args)
 
