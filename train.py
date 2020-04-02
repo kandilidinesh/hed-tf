@@ -2,7 +2,7 @@
 from __future__ import print_function
 import numpy as np
 import tensorflow as tf
-tf.logging.set_verbosity(tf.logging.ERROR)
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 import yaml
 from hed_net import HED
 from loss import HedLoss
